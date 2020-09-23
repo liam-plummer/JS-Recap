@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
+    
     <h1 class="header">DOM Javascript</h1>
-    <script src="./public/js/main.js"></script>
     <button>Exercise 1</button>
     <button>Exercise 2</button>
     <button>Exercise 3</button>
     <button>Exercise 4</button>
     <button>Exercise 5</button>
     <button>Exercise 6</button>
+    <button>Exercise 7</button>
     <Section class="Exo1">
         <div class="prem">
-           <h2 class="target">Je suis un sous-titre H2</h2>
+           <h2 class="changer">Je suis un sous-titre H2</h2>
            <p>list de proprieté a retrouver dans la documentation</p>
            <ul>
                <li>innerText</li>
@@ -32,11 +33,85 @@
            <p>Ajouter une class background bootstrap au h2</p>
         </div>
     </Section>
-    <Section class="Exo2"></Section>
-    <Section class="Exo3"></Section>
-    <Section class="Exo4"></Section>
-    <Section class="Exo5"></Section>
-    <Section class="Exo6"></Section>
+    <Section class="Exo2">
+        <div>
+            <p>Mettre un ecouteur d'evenement sur les bouton navet changer le panél en conséquence</p>
+        </div>
+    </Section>
+    <Section class="Exo3">
+        <h2 class="inconnu">Welcome inconnu</h2>
+        <p>Ecrivez ci-desous le nom de la personne que vous voulez acceullir</p>
+        <p>Lorsque vous cliquez sur le bouton "go" le nom que vous avez ajouter dans l'input sera alors mi dans le span du h2 et l'input sera alors vidé de toute contenu. Attention, interdiction de touché l'HTML</p>
+        <input type="text" class="noms">
+        <button>go</button>
+    </Section>
+    <Section class="Exo4">
+        <div class="space">
+            <div class="blue">
+                <div id="red1" class="red"></div>
+            </div>
+            <div class="blue">
+                <div id="red2" class="red"></div>
+            </div>
+        </div>
+        <div class="btnBadge">
+            <button id="move">Change Place</button>
+            <span id="counter" class="badge badge-success">Nombre de click : 0</span>
+        </div>
+    </Section>
+    <Section class="Exo5">
+        <h2>Générer des éléments du DOM</h2>
+        <p>Cliquer sur le bouton ci-desous pour générer des oeufs</p>
+        <button class="bg-success text-white">Ajouter un oeuf</button>
+        <div id="images"></div>
+    </Section>
+    <Section class="Exo6">
+        <h2>Creation Calculatrice</h2>
+        <h3>Niveau 1</h3>
+        <div class="niv-1">
+            <input type="text" id="numero1">
+            <span>+</span>
+            <input type="text" id="numero2">
+            <button id="res1">=</button>
+            <span id="result"></span>
+        </div>
+        <h3>Niveau 2</h3>
+        <div class="niv-2">        
+            <p id="line" class="text-right"></p><span class="text-right"></span><span id="ops"></span></p>
+            <input id="btn-target">
+            <div class="rws">
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="op">+</button>
+            </div>
+            <div class="rws">
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="op">-</button>
+            </div>
+            <div class="rws">
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="op">*</button>
+            </div>
+            <div class="rws">
+                <button id="cancel">C</button>
+                <button class="num">0</button>
+                <button id="calc">=</button>
+                <button class="op">/</button>
+            </div>
+        </div>
+    </Section>
+    <Section class="Exo7">
+        <h3>ToDo List</h3>
+        <input placeholder="Que dois-je faire?">
+        <button class="bg-succes text-white">Toutes</button>
+        <button class="bg-succes text-white">Completées</button>
+        <button class="bg-succes text-white">A faire</button>
+    </Section>
 
 <script src="./public/js/main.js"></script>
 </body>

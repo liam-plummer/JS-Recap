@@ -1,5 +1,8 @@
-@import "./_fonts.sass"
-@import "./_icons.sass"
+@import "../sass/_variables.sass"
+@import "../../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../sass/_fonts.sass"
+@import "../sass/_icons.sass"
+
 
 body
     width: 75%
@@ -11,21 +14,123 @@ body
     padding: 15px
     text-align: center
 button 
-    // display: flex
-    // flex-direction: row
     color: #007BFF
     padding-right:  115px
     margin: 15px
     margin-top: 0
     background-color: white
     border: none
-    // transition: all 2s
     &:focus
         background-color: #007BFF
         color: white
         outline: none
-section 
+section
     &:first-of-type
         background-color: #BDBEBE
-        .prem 
-            padding: 25px
+        padding: 25px
+        display: none
+    &:nth-of-type(2)
+        background-color: #BDBEBE 
+        padding: 25px
+        display: none
+    &:nth-of-type(3)
+        background-color: #BDBEBE
+        padding: 25px
+        display: none
+        button 
+            padding: 5px
+            color: black
+            &:focus
+                background-color: white
+    &:nth-of-type(4)
+        background-color: #BDBEBE
+        padding: 25px
+        display: none
+        .space
+            display: flex
+            justify-content: space-around
+            .blue 
+                width: 250px
+                height: 150px
+                background-color: blue
+                display: flex
+                align-items: center
+                .red
+                    width: 45px
+                    height: 45px
+                    margin: auto
+                    background-color: red
+                #red2
+                    display: none
+        .btnBadge
+            margin-top: 20px
+            display: flex
+            flex-direction: column
+            align-items: center
+            #move
+                background-color: #FFC82E
+                padding: 5px
+            span 
+                padding: 15px
+    &:nth-of-type(5)
+        background-color: #BDBEBE
+        padding: 25px
+        display: none
+    &:nth-of-type(6)
+        background-color: #BDBEBE
+        padding: 25px
+        display: none
+        .niv-1
+            #res1
+                padding: 5px
+                color: black
+        .niv-2 
+            background-color: #212529
+            width: 300px
+            display: flex
+            flex-direction: column
+            #line
+                color: white
+                #result2
+                    color: white
+            #btn-target
+                width: 250px
+            .rws
+                margin-top: 25px
+                display: flex
+                flex-direction: row
+                justify-content: space-evenly
+                button
+                    padding: 10px
+                    color: black
+                    border-radius: 3px
+                    &:focus
+                        outline: none
+                        background-color: white
+                .op 
+                    background-color: #007BFF
+                    color: white
+                    &:focus
+                        background-color: #007BFF
+                #cancel
+                    background-color: #DC3545
+                    color: white
+                    &:focus
+                    background-color: #DC3545
+                        
+                #calc
+                    background-color:#28A745
+                    color: white
+                    &:focus
+                        background-color:#28A745
+                        
+
+    &:last-of-type
+        background-color: #BDBEBE
+        padding: 25px
+        display: none
+        
+        
+        
+
+        
