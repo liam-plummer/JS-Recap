@@ -77,7 +77,7 @@
         </div>
         <h3>Niveau 2</h3>
         <div class="niv-2">        
-            <p id="line" class="text-right"></p><span class="text-right"></span><span id="ops"></span></p>
+            <p id="line" class="text-right"><span class="text-right"></span><span id="ops"></span></p>
             <input id="btn-target">
             <div class="rws">
                 <button class="num">1</button>
@@ -107,10 +107,15 @@
     </Section>
     <Section class="Exo7">
         <h3>ToDo List</h3>
-        <input placeholder="Que dois-je faire?">
-        <button class="bg-succes text-white">Toutes</button>
-        <button class="bg-succes text-white">Completées</button>
-        <button class="bg-succes text-white">A faire</button>
+        <input placeholder="Que dois-je faire?" id="ToDo"/>
+        <div class="d-flex justify-content-center" id="faireBouton">
+            <button class="bg-success text-white p-1 text-center">Toutes</button>
+            <button class="bg-success text-white p-1 text-center">Completées</button>
+            <button class="bg-success text-white p-1 text-center">A faire</button>
+        </div>
+        <ul id="list">
+ 
+        </ul>
     </Section>
 
 <script src="./public/js/main.js"></script>

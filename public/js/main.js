@@ -99,9 +99,13 @@ btn[10].addEventListener("click", () => {
     eq1.innerText = Number(num1.value) + Number(num2.value)
 })
 
+
+
+
+
 let chiffres = document.getElementById("btn-target")
 let numeros = document.querySelectorAll(".num")
-let calcule = document.getElementById("reslut2")
+let calcule = document.getElementById("result2")
 for (let i = 0; i < numeros.length; i++) {
     numeros[i].value = i + 1;
     numeros[9].value = 0;
@@ -109,8 +113,6 @@ for (let i = 0; i < numeros.length; i++) {
         chiffres.value += numeros[i].value;
     })
 }
-
-
 
 let operateur = document.getElementById("ops")
 let ligne = document.getElementById("line")
@@ -122,6 +124,7 @@ btn[14].addEventListener("click", ()=> {
     chiffres.value = ""
 })
 btn[18].addEventListener("click", ()=> {
+    operateur.innerText = "-"
     result2 = Number(chiffres.value)
     ligne.innerText = `${result2} - `
     chiffres.value = ""
@@ -155,4 +158,142 @@ btn[25].addEventListener("click", () => {
             break;
     }
 })
+
+btn[23].addEventListener("click", () => {
+    ligne.innerText = ""
+    chiffres.value = ""
+})
+
+
+var liste = document.getElementById("list")
+let aFaire = document.getElementById("ToDo")
+
+btn[27].style.border = "2px solid white"
+btn[28].style.border = "2px solid white"
+btn[29].style.border = "2px solid white"
+
+btn[27].style.borderRadius = "4px"
+btn[28].style.borderRadius = "4px"
+btn[29].style.borderRadius = "4px"
+
+btn[27].style.padding = "5px"
+btn[28].style.padding = "5px"
+btn[29].style.padding = "5px"
+
+
+
+
+
+
+aFaire.addEventListener("keypress", function(event){
+    if (event.keyCode === 13){ 
+        var listItem = document.createElement("div")
+            listItem.style.backgroundColor ="white"
+            listItem.style.width = "800px"
+            listItem.style.display ="flex"
+            listItem.style.justifyContent = "space-between"
+            listItem.style.alignItems = "center"
+            listItem.style.marginTop = "15px"
+        let collect = document.createElement("div")
+            collect.style.display ="flex"
+            collect.style.flexDirection = "row"
+            collect.style.marginTop = "10px"
+        let checked = document.createElement("button")
+            checked.style.backgroundColor = "green"
+            checked.style.padding = "5px"
+            checked.style.marginRight = "3px"
+            checked.style.borderRadius = "3px"
+            checked.style.height = "max-content"
+        let edited = document.createElement("button")
+            edited.style.backgroundColor = "yellow"
+            edited.style.padding = "5px"
+            edited.style.marginRight = "3px"
+            edited.style.borderRadius = "3px"
+            edited.style.height = "max-content"
+        let erased = document.createElement("button")
+            erased.style.backgroundColor = "red"
+            erased.style.padding = "5px"
+            erased.style.borderRadius = "3px"
+            erased.style.height = "max-content"
+        var check = document.createElement("i")
+            check.setAttribute("class", "fas fa-check")
+            check.style.color = "white"
+            check.style.margin = "3px"
+            checked.appendChild(check)
+        var edit = document.createElement("i")
+            edit.setAttribute("class", "fas fa-edit")
+            edit.style.color = "black"
+            edit.style.margin = "3px"
+            edited.appendChild(edit)
+        var efface = document.createElement("i")
+            efface.setAttribute("class", "far fa-trash-alt")
+            efface.style.backgroundColor = "red"
+            efface.style.color = "white"
+            efface.style.margin = "3px"
+            erased.appendChild(efface)
+        var li = document.createElement("li")
+            li.innerText = aFaire.value
+            li.style.marginLeft = "5px"
+            li.style.listStyle = "none"
+        collect.append(checked, edited, erased)
+        listItem.append(li, collect)
+        list.appendChild(listItem)
+        aFaire.value = ""
+        checked.addEventListener("click", () => {
+            if (listItem.style.backgroundColor != "green") {
+                listItem.style.backgroundColor = "green"
+            } else {
+                listItem.style.backgroundColor = "white"
+            }
+        })
+        edited.addEventListener("click", () => {
+            li.style.display = "none"
+            let valueChange = document.createElement("input")
+            valueChange.setAttribute("type", "text")
+            valueChange.style.border = "2px solid black"
+            listItem.appendChild(valueChange)
+            collect.style.display = "none"
+            let saveChange = document.createElement("button")
+            let saveIcon = document.createElement("i")
+                saveIcon.setAttribute("class", "far fa-save")
+                saveChange.style.backgroundColor = "yellow"
+                saveChange.style.padding = "10px"
+                saveChange.style.marginTop = "15px"
+                saveChange.style.borderRadius = "5px"
+                saveChange.appendChild(saveIcon)
+                listItem.style.justifyContent = "space-between"
+            listItem.appendChild(saveChange)
+            saveChange.addEventListener("click", () => {
+                li.innerText = valueChange.value
+                saveChange.remove()
+                collect.style.display = "block"
+                li.style.display = "block"
+                valueChange.remove()
+            })
+
+        })
+        erased.addEventListener("click", ()=> {
+            liste.removeChild(listItem)
+        })
+        btn[27].addEventListener("click", () => {
+            listItem.style.display = "flex"
+        })
+        btn[28].addEventListener("click", () => {
+            if (listItem.style.backgroundColor != "green") {
+                listItem.style.display = "none"
+            } else {
+                listItem.style.display = "flex"
+            }
+        })
+        
+        btn[29].addEventListener("click", () => {
+            if (listItem.style.backgroundColor == "green") {
+                listItem.style.display = "none"
+            } else {
+                listItem.style.display = "flex"
+            }
+        })
+    }
+})
+
 
