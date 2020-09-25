@@ -99,10 +99,6 @@ btn[10].addEventListener("click", () => {
     eq1.innerText = Number(num1.value) + Number(num2.value)
 })
 
-
-
-
-
 let chiffres = document.getElementById("btn-target")
 let numeros = document.querySelectorAll(".num")
 let calcule = document.getElementById("result2")
@@ -181,12 +177,9 @@ btn[28].style.padding = "5px"
 btn[29].style.padding = "5px"
 
 
-
-
-
-
 aFaire.addEventListener("keypress", function(event){
     if (event.keyCode === 13){ 
+        // Creation div, contiendra li et bouton
         var listItem = document.createElement("div")
             listItem.style.backgroundColor ="white"
             listItem.style.width = "800px"
@@ -194,43 +187,48 @@ aFaire.addEventListener("keypress", function(event){
             listItem.style.justifyContent = "space-between"
             listItem.style.alignItems = "center"
             listItem.style.marginTop = "15px"
+            // Creation div pour les trois bouton
         let collect = document.createElement("div")
             collect.style.display ="flex"
             collect.style.flexDirection = "row"
             collect.style.marginTop = "10px"
+            // bouton vert
         let checked = document.createElement("button")
             checked.style.backgroundColor = "green"
             checked.style.padding = "5px"
             checked.style.marginRight = "3px"
             checked.style.borderRadius = "3px"
-            checked.style.height = "max-content"
+            // bouton edit
         let edited = document.createElement("button")
             edited.style.backgroundColor = "yellow"
             edited.style.padding = "5px"
             edited.style.marginRight = "3px"
-            edited.style.borderRadius = "3px"
-            edited.style.height = "max-content"
+            edited.style.borderRadius = "3px" 
+            // bouton effacer
         let erased = document.createElement("button")
             erased.style.backgroundColor = "red"
             erased.style.padding = "5px"
             erased.style.borderRadius = "3px"
-            erased.style.height = "max-content"
-        var check = document.createElement("i")
+            // icone check
+            var check = document.createElement("i")
             check.setAttribute("class", "fas fa-check")
             check.style.color = "white"
             check.style.margin = "3px"
             checked.appendChild(check)
+            // icone edit
         var edit = document.createElement("i")
             edit.setAttribute("class", "fas fa-edit")
             edit.style.color = "black"
             edit.style.margin = "3px"
             edited.appendChild(edit)
+            // icone delete
         var efface = document.createElement("i")
             efface.setAttribute("class", "far fa-trash-alt")
             efface.style.backgroundColor = "red"
             efface.style.color = "white"
             efface.style.margin = "3px"
             erased.appendChild(efface)
+            // creation li
         var li = document.createElement("li")
             li.innerText = aFaire.value
             li.style.marginLeft = "5px"
@@ -239,6 +237,7 @@ aFaire.addEventListener("keypress", function(event){
         listItem.append(li, collect)
         list.appendChild(listItem)
         aFaire.value = ""
+        // fonction check
         checked.addEventListener("click", () => {
             if (listItem.style.backgroundColor != "green") {
                 listItem.style.backgroundColor = "green"
@@ -246,6 +245,7 @@ aFaire.addEventListener("keypress", function(event){
                 listItem.style.backgroundColor = "white"
             }
         })
+        // fonction changer li
         edited.addEventListener("click", () => {
             li.style.display = "none"
             let valueChange = document.createElement("input")
@@ -270,14 +270,16 @@ aFaire.addEventListener("keypress", function(event){
                 li.style.display = "block"
                 valueChange.remove()
             })
-
-        })
+        }) 
+        // fonction effacer
         erased.addEventListener("click", ()=> {
             liste.removeChild(listItem)
         })
+        // fonction voir tout les li
         btn[27].addEventListener("click", () => {
             listItem.style.display = "flex"
         })
+        // fonction voire seulement completer
         btn[28].addEventListener("click", () => {
             if (listItem.style.backgroundColor != "green") {
                 listItem.style.display = "none"
@@ -285,7 +287,7 @@ aFaire.addEventListener("keypress", function(event){
                 listItem.style.display = "flex"
             }
         })
-        
+        // fonction voire seulement encore A faire
         btn[29].addEventListener("click", () => {
             if (listItem.style.backgroundColor == "green") {
                 listItem.style.display = "none"
@@ -295,5 +297,3 @@ aFaire.addEventListener("keypress", function(event){
         })
     }
 })
-
-
